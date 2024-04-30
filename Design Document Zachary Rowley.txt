@@ -1,0 +1,53 @@
+﻿Design Document
+Zachary Rowley
+PhotoPro
+
+
+Data
+* Image matrix - 2d array of ints that store brightness of image
+* Image rendering - 2d array of chars storing each pixel
+* Menu selection 1 - char
+* Menu selection 2 - char
+* Loaded image - bool
+* File Name - string
+* Image history - array of strings
+* Brightness values - array of ints
+* Character representation - array of chars
+
+
+Purpose/Use
+PhotoPro will be used to store an image and allow the user to edit this image as pleased. This will include the cropping of the image by reducing the width and height of the pixel array. This program will also allow the user to adjust the brightness of the image through a similar mechanism, and rotate the image by a movement algorithm for each pixel in the array. All this feedback will show the image and the results produced by the user.
+
+
+Functions
+* main()
+   * Data: contains the menu for image selection, display image and editing results
+   * Functionality: prompt the user to choose whether to input an image or exit the application. Then the image will display in this and hold the change in values prompted through the arrays, after the user is done editing, save the final image and exit.
+
+
+* loadImage()
+   * Input Parameters: file (string)
+   * Returned Output: None
+   * Functionality: Loads an image from a specified file into the Image and updates the Loaded Image status.
+
+
+* displayImage()
+   * Input Parameters: None
+   * Returned Output: None
+   * Functionality: Renders the Image to the display using the Character Representation char array, allowing the user to view the current visual of the image.
+* editImage()
+   * Input Parameters: None
+   * Returned Output: None
+   * Functionality: Provides the user with editing options and applies the selected edits to the Image Matrix.
+* cropImage()
+   * Functionality: Reduces the size of the Image Matrix based on user input for new width and height, simulating the cropping of the image.
+* adjustBrightness(brightnessDelta)
+   * Functionality: Modifies the brightness of the entire Image Matrix by a certain delta value, either increasing or decreasing pixel brightness levels.
+* rotateImage()
+   * Functionality: Applies a rotation algorithm to the Image, moving each pixel to its new location based on the user inputted degree of rotation (e.g., 90 degrees).
+* saveImage(file)
+   * Input Parameters: file (string)
+   * Returned Output: None
+   * Functionality: Saves the edited image from the to the file, updating the Image History.
+* exitApplication()
+   * Functionality: Closes the program, ensuring any necessary cleanup or saving of state is performed beforehand.
